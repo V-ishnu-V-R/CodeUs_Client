@@ -12,7 +12,7 @@ const ProfileCard = ({ location }) => {
   const params = useParams();
   const { user } = useSelector((state) => state.authReducer.authData);
   const posts = useSelector((state) => state.postReducer.posts);
-  const serverPublic =  process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL
+  const serverPublic =  process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_PUBLIC_FOLDER_TESTING  : process.env.REACT_APP_PUBLIC_FOLDER
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {

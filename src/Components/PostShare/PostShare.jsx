@@ -12,7 +12,7 @@ import { uploadImage, uploadPost } from "../../Actions/UploadAction";
 import { toast } from "react-hot-toast";
 
 const PostShare = () => {
-  const serverPublic =  process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL
+  const serverPublic =  process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_PUBLIC_FOLDER_TESTING: process.env.REACT_APP_PUBLIC_FOLDER
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const imageRef = useRef();
