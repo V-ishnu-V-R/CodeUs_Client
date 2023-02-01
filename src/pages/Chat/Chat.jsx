@@ -35,7 +35,7 @@ const Chat = () => {
   }, [sentMessage]);
 
   useEffect(() => {
-    socket.current = io(process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL);
+    socket.current = io(process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_SOCKET_URL_TESTING : process.env.REACT_APP_SOCKET_URL);
     socket.current.emit("new-user-add", user._id);
     socket.current.on("get-users", (users) => {
       setOnlineUsers(users);
