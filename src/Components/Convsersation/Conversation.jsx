@@ -5,6 +5,8 @@ import { getUser } from "../../Api/UserRequest";
 
 const Conversation = ({ data, currentUserId, online }) => {
   const [userData, setUserData] = useState(null); //this is the user that we area chatting with vishnu
+  const FOLDER=process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL
+  
   useEffect(() => {
     const userId = data.members.find((id) => id !== currentUserId); //this is to find the other user that vishnu is talking
 
@@ -26,8 +28,8 @@ const Conversation = ({ data, currentUserId, online }) => {
           <img
             src={
               userData?.profilePicture
-                ? process.env.REACT_APP_PUBLIC_FOLDER + userData.profilePicture
-                : process.env.REACT_APP_PUBLIC_FOLDER + "defaultProfile.jpg"
+                ? FOLDER + userData.profilePicture
+                : FOLDER + "defaultProfile.jpg"
             }
             alt=""
             className="followerImage"

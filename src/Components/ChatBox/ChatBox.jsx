@@ -11,6 +11,7 @@ const ChatBox = ({ chat, currentUser, setSentMessage, recieveMessage }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const scroll = useRef();
+  const FOLDER=process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL
   useEffect(() => {
     if (recieveMessage !== null && recieveMessage.chatId === chat._id) {
       setMessages([...messages, recieveMessage]);
@@ -86,9 +87,9 @@ const ChatBox = ({ chat, currentUser, setSentMessage, recieveMessage }) => {
                   <img
                     src={
                       userData?.profilePicture
-                        ? process.env.REACT_APP_PUBLIC_FOLDER +
+                        ? FOLDER +
                           userData.profilePicture
-                        : process.env.REACT_APP_PUBLIC_FOLDER +
+                        :FOLDER +
                           "defaultProfile.jpg"
                     }
                     alt=""

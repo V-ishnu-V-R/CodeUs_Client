@@ -17,7 +17,7 @@ const User = ({ person }) => {
       : dispatch(followUser(person._id, user));
     setFollowing((prev) => !prev);
   };
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+  const serverPublic = process.env.REACT_APP_PHASE === "testing"? process.env.REACT_APP_DOMAIN_URL_TESTING : process.env.REACT_APP_DOMAIN_URL
   return (
     <div className="follower">
       <div
