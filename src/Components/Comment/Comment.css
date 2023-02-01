@@ -1,0 +1,47 @@
+/* .comment{
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 10px 10px 10px;
+    
+    font-size: 14px;
+    border: none;
+    outline: none;
+   
+}
+.comment>input{
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 10px 10px 10px;
+    
+    font-size: 14px;
+    border: none;
+    outline: none;
+   
+} */
+.comment {
+    display: flex;
+    font-size: 14px;
+
+
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    border: none;
+}
+
+.writeComment {
+    width: 100%;
+    background-color: var(--inputColor);
+    border: none;
+    border-radius: 5px;
+    padding: 0 5px;
+    outline: none;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.commentButton {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
