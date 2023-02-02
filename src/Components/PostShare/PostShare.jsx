@@ -31,6 +31,16 @@ const PostShare = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!desc.current?.value && !image) {
+      return toast("oops! Fields are empty", {
+          icon: "🫤",
+          style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+          },
+      });
+  }
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
